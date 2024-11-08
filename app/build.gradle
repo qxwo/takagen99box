@@ -95,6 +95,11 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
         jvmTarget = "1.8"  // 或 "11"
     }
 }
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)  // 或 11，根据需求调整
+    }
+}
 dependencies {
     constraints {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {
