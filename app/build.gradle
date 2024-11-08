@@ -6,7 +6,14 @@ apply plugin: 'com.yanzhenjie.andserver'
 def static buildTime() {
     return new Date().format("yyyyMMdd.HHmm", TimeZone.getTimeZone("GMT+08:00"))
 }
+kotlin {
+    jvmTarget = "1.8"  // 或者根据你的项目选择 "11"
+}
 
+tasks.withType(JavaCompile) {
+    sourceCompatibility = '1.8'  // 或者 '11'
+    targetCompatibility = '1.8'  // 或者 '11'
+}
 android {
     compileSdk 34
 
