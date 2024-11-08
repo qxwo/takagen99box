@@ -90,7 +90,11 @@ android {
         disable 'UnsafeOptInUsageError'
     }
 }
-
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions {
+        jvmTarget = "1.8"  // 或 "11"
+    }
+}
 dependencies {
     constraints {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {
